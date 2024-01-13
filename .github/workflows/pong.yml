@@ -28,6 +28,6 @@ jobs:
       # Runs a single command using the runners shell
       - name: godot build
         run: |
-          ls
           cd .\pong
+          ls
           godot --export-release "Windows Desktop" .\test_name.exe
