@@ -25,6 +25,13 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
+      - name: Output Run ID
+        run: echo ${{ github.run_id }}
+      - name: Output Run Number
+        run: echo ${{ github.run_number }}
+      - name: Output Run Attempt
+        run: echo ${{ github.run_attempt }}      
+
       # Runs a single command using the runners shell
       - name: godot build
         run: |
@@ -34,4 +41,4 @@ jobs:
       
       - name: copy output
         run: |
-          Copy-Item .\pong\pong.exe \temp\pong.exe
+          Copy-Item .\pong\pong.exe \temp\pong-${{ github.run_number }}.exe
