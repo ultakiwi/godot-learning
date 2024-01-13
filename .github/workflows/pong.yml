@@ -30,4 +30,9 @@ jobs:
         run: |
           cd .\pong
           ls
-          godot --export-release "Windows Desktop" .\test_name.exe
+          godot --export-release "Windows Desktop" .\pong.exe
+      
+      - name: copy output
+        run: |
+          cd .\pong
+          Copy-Item .\pong\pong.exe \temp\pong.exe
