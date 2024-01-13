@@ -36,8 +36,7 @@ jobs:
       - name: godot build
         run: |
           cd .\pong
-          ls
-          godot --export-release "Windows Desktop" .\pong.exe
+          godot --headless --export-release "Windows Desktop" .\pong.exe
       
       - name: copy output
         run: |
